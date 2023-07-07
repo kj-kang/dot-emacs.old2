@@ -400,11 +400,12 @@
 ;;
 
 (use-package helm-projectile
-  :ensure t
   :pin melpa
-  :after helm
   :config
   (helm-projectile-on))
+
+;; https://github.com/kj-kang/dot-emacs/issues/5
+(helm-projectile-on)
 
 
 ;;=====================================
