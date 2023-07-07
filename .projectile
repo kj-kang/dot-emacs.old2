@@ -1,0 +1,16 @@
+- /auto-save-list
+- /.cache
+- /elpa
+- /elpaca
+- /.emacs.desktop
+- /.emacs.desktop.lock
+- /eshell
+- /.git
+- /.last-package-update-day
+- /.lsp-session-v1
+- /projectile-bookmarks.eld
+- /projectile.cache
+- /recentf
+- /site-lisp
+- /straight
+- /transient
