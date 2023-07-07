@@ -1,4 +1,5 @@
-;;; dot-emacs -- Emacs
+;;; -*- mode: emacs-lisp -*-
+;;; dot-emacs.el -- Emacs
 ;;;
 ;;; Commentary:
 ;;;
@@ -606,3 +607,5 @@
   (typescript-mode . electric-pair-mode)
   (typescript-mode . show-paren-mode)
   (typescript-mode . smartparens-mode))
+
+;;; dot-emacs ends here
