@@ -206,6 +206,25 @@
 ;; Theme
 ;;=====================================
 
+
+(use-package doom-themes
+  :pin melpa
+  :if window-system
+  :config
+  (setq doom-themes-enable bold t)
+  (setq doom-themes-enable-italic t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-neotree-config)
+  (setq doom-themes-treemacs-theme "doom-atom")
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config)
+  (load-theme 'doom-one t))
+
+(when window-system
+  (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
+  (set-face-attribute 'default nil :family "SF Mono" :height 180))
+
+
 ;;
 ;; A minimal and modern mode-line
 ;; https://github.com/seagle0128/doom-modeline
@@ -217,23 +236,6 @@
   :if window-system
   :init
   (doom-modeline-mode))
-
-;;
-;;
-;;
-
-(use-package fixed-font
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp"
-  :if window-system
-  :bind
-  ("C-0" . fixed-font-defaut)
-  ("C-=" . fixed-font-increase)
-  ("C--" . fixed-font-decrease)
-  :init
-  (setq fixed-font-ascii-font "SF Mono")
-  (setq fixed-font-hangul-font "NanumGothicCoding")
-  (fixed-font-default))
 
 
 ;;=====================================
@@ -340,22 +342,22 @@
 ;; Highlight brackets according to their depth
 ;;
 
-(use-package rainbow-delimiters
-  :pin melpa
-  :hook
-  (prog-mode . rainbow-delimiters)
-  :config
-     (custom-set-faces
-    '(rainbow-delimiters-depth-0-face ((t (:foreground "saddle brown"))))
-    '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
-    '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
-    '(rainbow-delimiters-depth-3-face ((t (:foreground "chartreuse"))))
-    '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
-    '(rainbow-delimiters-depth-5-face ((t (:foreground "yellow"))))
-    '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
-    '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
-    '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1"))))
-    '(rainbow-delimiters-unmatched-face ((t (:foreground "black"))))))
+;; (use-package rainbow-delimiters
+;;   :pin melpa
+;;   :hook
+;;   (prog-mode . rainbow-delimiters)
+;;   :config
+;;      (custom-set-faces
+;;     '(rainbow-delimiters-depth-0-face ((t (:foreground "saddle brown"))))
+;;     '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
+;;     '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+;;     '(rainbow-delimiters-depth-3-face ((t (:foreground "chartreuse"))))
+;;     '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
+;;     '(rainbow-delimiters-depth-5-face ((t (:foreground "yellow"))))
+;;     '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
+;;     '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
+;;     '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1"))))
+;;     '(rainbow-delimiters-unmatched-face ((t (:foreground "black"))))))
 
 
 ;;=====================================
