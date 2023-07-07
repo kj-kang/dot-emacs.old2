@@ -18,13 +18,14 @@
 ;; Set language environment to korean (UTF-8)
 ;;
 
-;; (set-language-environment "Korean")
-;; (setq locale-coding-system 'utf-8)
-;; (prefer-coding-system 'utf-8)
-;; (set-terminal-coding-system 'utf-8)
-;; (set-keyboard-coding-system 'utf-8)
-;; (set-selection-coding-system 'utf-8)
-;; (set-buffer-file-coding-system 'utf-8)
+(set-language-environment "Korean")
+(setq locale-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+
 
 ;;
 ;; set buffer, file environment
@@ -37,14 +38,14 @@
 (setq create-lockfiles nil)
 
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default c-basic-offset 4)
+(setq-default tab-width 2)
+(setq-default c-basic-offset 2)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; (global-auto-revert-mode t)
-;; (global-font-lock-mode t)
-;; (recentf-mode t)
-;; (transient-mark-mode t)
+(global-auto-revert-mode t)
+(global-font-lock-mode t)
+(recentf-mode t)
+(transient-mark-mode t)
 
 ;;
 ;; Move customization to their own file
