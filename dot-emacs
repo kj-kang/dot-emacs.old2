@@ -427,8 +427,8 @@
 (use-package magit-gitflow
   :ensure t
   :pin melpa
-  :config
-  (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+  :hook
+  (magit-mode . turn-on-magit-gitflow))
 
 
 ;;=====================================
