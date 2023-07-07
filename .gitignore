@@ -1,0 +1,15 @@
+/.emacs.desktop
+/.lsp-session-v1
+/auto-save-list/
+/elpa/
+/elpaca/
+/.emacs.desktop.lock
+/.cache/
+/.last-package-update-day
+/custom.el
+/eshell/
+/projectile-bookmarks.eld
+/recentf
+/site-lisp/
+/straight/
+/transient/
