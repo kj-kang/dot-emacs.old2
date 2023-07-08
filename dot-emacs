@@ -544,9 +544,13 @@
   :hook
   (json-mode . display-line-numbers-mode)
   (json-mode . flycheck-mode)
+  (json-mode . (lambda ()
+                 (make-local-variable 'js-indent-level)
+                 (setq tab-width 2)
+                 (setq js-indent-level 2)))
   :config
-  (flycheck-add-mode 'json-jsonlint 'json-mode)
-  (setq js-indent-level 2))
+  (flycheck-add-mode 'json-jsonlint 'json-mode))
+
 
 ;;
 ;;
