@@ -609,6 +609,8 @@
   (typescript-mode . flycheck-mode)
   (typescript-mode . electric-pair-mode)
   (typescript-mode . show-paren-mode)
-  (typescript-mode . smartparens-mode))
+  (typescript-mode . smartparens-mode)
+  :config
+  (setq typescript-indent-level 2))
 
 ;;; dot-emacs ends here
