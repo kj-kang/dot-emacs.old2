@@ -243,6 +243,13 @@
 ;;=====================================
 
 
+(use-package etag
+  :ensure nil
+  :elpaca nil
+  :bind
+  ("M-*" . pop-tag-mark))
+
+
 ;;
 ;; Modular text completion framework
 ;;
