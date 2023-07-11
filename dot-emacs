@@ -209,7 +209,6 @@
 
 (use-package doom-themes
   :pin melpa
-  :if window-system
   :config
   (setq doom-themes-enable-bold t)
   (setq doom-themes-enable-italic t)
