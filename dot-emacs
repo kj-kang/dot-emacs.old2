@@ -271,6 +271,12 @@
   :hook
   (prog-mode . yas-minor-mode))
 
+;;
+;;
+;;
+
+(use-package wgrep
+  :pin melpa)
 
 ;;
 ;; Collection of yasnippet snippets
