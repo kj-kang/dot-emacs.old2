@@ -20,6 +20,7 @@
 
 (set-language-environment "Korean")
 (setq locale-coding-system 'utf-8)
+(set-locale-environment "ko_KR.utf-8")
 (prefer-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -172,6 +173,8 @@
 ;; doom-themes
 ;;
 
+
+
 (use-package doom-themes
   :pin melpa
   :config
@@ -182,7 +185,10 @@
   (setq doom-themes-treemacs-theme "doom-atom")
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one t)
+  :init
+  (run-at-time "09:00" (* 60 60 24) (lambda () (enable-theme 'doom-one-light)))
+  (run-at-time "20:00" (* 60 60 24) (lambda () (enable-theme 'doom-one))))
 
 
 ;;
@@ -200,7 +206,6 @@
     (setq face-font-rescale-alist `(("NanumGothicCoding" . 1.20)))
     (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
     (set-face-attribute 'default nil :family "SF Mono" :height 110)))
-
   
 
 ;;
@@ -599,5 +604,20 @@
   (typescript-mode . smartparens-mode)
   :config
   (setq typescript-indent-level 2))
+
+
+;;=====================================
+;; org
+;;=====================================
+
+(use-package org
+  :ensure t
+  :pin melpa
+  :bind
+  ("C-c c" . org-capture)
+  ("C-c a" . org-agenda)
+  :config
+  (require 'default-org))
+
 
 ;;; dot-emacs ends here
