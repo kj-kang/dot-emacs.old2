@@ -183,7 +183,7 @@
 (when window-system
   (when os-linux-p
     (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
-    (set-face-attribute 'default nil :family "SF Mono" :height 180))
+    (set-face-attribute 'default nil :family "SF Mono" :height 200))
   (when os-windows-p
     (setq face-font-rescale-alist `(("NanumGothicCoding" . 1.20)))
     (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
