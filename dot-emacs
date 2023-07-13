@@ -490,8 +490,8 @@
     ("C-c C-f" . eval-defun)
     ("M-*"     . pop-tag-mark))
   :hook
-  (emacs-lisp . company-mode)
-  (emacs-lisp . (lambda () (set (make-local-variable 'company-backends)
+  (emacs-lisp-mode . company-mode)
+  (emacs-lisp-mode . (lambda () (set (make-local-variable 'company-backends)
                      '((company-capf
                         company-semantic
                         company-files
