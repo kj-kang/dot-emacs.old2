@@ -157,6 +157,21 @@
 ;; Theme
 ;;=====================================
 
+
+;;
+;; Emasc 기본 설정
+;;
+
+(when window-system
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1))
+
+
+;;
+;; doom-themes
+;;
+
 (use-package doom-themes
   :pin melpa
   :config
@@ -168,6 +183,7 @@
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
   (load-theme 'doom-one t))
+
 
 ;;
 ;; 영문, 한글 폰트 설정
@@ -183,7 +199,9 @@
   (when os-windows-p
     (setq face-font-rescale-alist `(("NanumGothicCoding" . 1.20)))
     (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
-    (set-face-attribute 'default nil :family "SF Mono" :height 120))
+    (set-face-attribute 'default nil :family "SF Mono" :height 110)))
+
+  
 
 ;;
 ;; A minimal and modern mode-line
