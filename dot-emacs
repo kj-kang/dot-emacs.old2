@@ -204,7 +204,6 @@
   (setq doom-themes-treemacs-theme "doom-atom")
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
-  :init
   (load-theme 'doom-one t)
   (load-theme 'doom-one-light t)
   (run-at-time "09:00" (* 60 60 24) (lambda () (enable-theme 'doom-one-light)))
@@ -217,11 +216,15 @@
 ;;
 
 (use-package spaceline
+  :ensure t
   :pin melpa
   :init
-  ;; (spaceline-emacs-theme)
-  (spaceline-spacemacs-theme)
-  (spaceline-helm-mode))
+  (require 'spaceline-config)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-buffer-encoding-off)
+  ;; (spaceline-toggle-buffer-encoding-abbrev-off)
+  (setq powerline-default-separator 'rounded)
+  (spaceline-spacemacs-theme))
 
 
 ;;=====================================
