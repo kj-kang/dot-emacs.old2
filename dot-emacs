@@ -224,7 +224,8 @@
   (spaceline-toggle-buffer-encoding-off)
   ;; (spaceline-toggle-buffer-encoding-abbrev-off)
   (setq powerline-default-separator 'rounded)
-  (spaceline-spacemacs-theme))
+  (spaceline-spacemacs-theme)
+  (spaceline-helm-mode))
 
 
 ;;=====================================
