@@ -41,12 +41,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq-default c-basic-offset 2)
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode t)
-(global-font-lock-mode t)
 (recentf-mode t)
-(transient-mark-mode t)
+
 
 ;;
 ;; Move customization to their own file
@@ -163,10 +163,15 @@
 ;; 윈도우 기본 환경 설정
 ;;
 
+(global-font-lock-mode t)
+(transient-mark-mode t)
+(global-hl-line-mode t)
+
 (when window-system
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
+
 
 ;;
 ;; 한글, 영문 글꼴 설정
@@ -199,9 +204,9 @@
   (setq doom-themes-treemacs-theme "doom-atom")
   (doom-themes-treemacs-config)
   (doom-themes-org-config)
+  :init
   (load-theme 'doom-one t)
   (load-theme 'doom-one-light t)
-  :init
   (run-at-time "09:00" (* 60 60 24) (lambda () (enable-theme 'doom-one-light)))
   (run-at-time "20:00" (* 60 60 24) (lambda () (enable-theme 'doom-one))))
 
@@ -474,23 +479,21 @@
 ;;
 ;;
 
-(use-package elisp-mode
+(use-package emacs-lisp-mode
   :ensure nil
-  :elpaca nil
-  :defines flycheck-disabled-checkers company-backends
   :bind
   (:map emacs-lisp-mode-map
     ("C-c C-b" . eval-buffer)
     ("C-c C-f" . eval-defun)
     ("M-*"     . pop-tag-mark))
   :hook
-  (emacs-lisp-mode . company-mode)
-  (emacs-lisp-mode . (lambda () (set (make-local-variable 'company-backends)
+  (emacs-lisp . company-mode)
+  (emacs-lisp . (lambda () (set (make-local-variable 'company-backends)
                      '((company-capf
-                    company-semantic
-                    company-files
-                    company-elisp
-                    company-yasnippet)))))
+                        company-semantic
+                        company-files
+                        company-elisp
+                        company-yasnippet)))))
   (emacs-lisp-mode . display-line-numbers-mode)
   (emcas-lisp-mode . flycheck-mode)
   (emacs-lisp-mode . (lambda () (setq-local flycheck-disabled-checkers '(emcas-lisp-checkdoc))))
