@@ -169,10 +169,21 @@
   (doom-themes-org-config)
   (load-theme 'doom-one t))
 
-(when window-system
-  (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
-  (set-face-attribute 'default nil :family "SF Mono" :height 180))
+;;
+;; 영문, 한글 폰트 설정
+;;
+;; ABCDABCD
+;; 한글ABCD
+;;
 
+(when window-system
+  (when os-linux-p
+    (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
+    (set-face-attribute 'default nil :family "SF Mono" :height 180))
+  (when os-windows-p
+    (setq face-font-rescale-alist `(("NanumGothicCoding" . 1.20)))
+    (set-fontset-font t 'hangul (font-spec :family "NanumGothicCoding"))
+    (set-face-attribute 'default nil :family "SF Mono" :height 120))
 
 ;;
 ;; A minimal and modern mode-line
