@@ -619,8 +619,9 @@
   :ensure t
   :pin melpa
   :bind
-  ("C-c c" . org-capture)
   ("C-c a" . org-agenda)
+  ("C-c c" . org-capture)
+  ("C-c l" . org-stored-links)
   :config
   (require 'default-org))
 
